@@ -143,19 +143,17 @@ console.log(prova)
 
 function upperFirst(n){
     
-    let prova2 = n.split(" ")
+    let prova2=n.split(" ")
+    let prova3
+    
+    
 
-    for(let i=0;i<n.length;i++){
-
-        prova2[i]=n[i].charAt(i).toUpperCase() + n[i].slice(i+1)
-        console.log(n.charAt(n.indexOf(" ")+1).toUpperCase() + n.slice((n.indexOf(" ")+1),1))
-
-        n.charAt(n.indexOf(" ")+1).toUpperCase() + n.slice((n.indexOf(" ")+1),1)
-
+    for(let i=0;i<prova2.length;i++){
+        prova2[i] = prova2[i].charAt(0).toUpperCase() + prova2[i].slice(1)
     }
+        prova3=prova2.join(" ")
         
-        console.log(prova2)
-        console.log(n.indexOf(" "))
+        return prova3
         
 
 }

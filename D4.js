@@ -116,7 +116,7 @@ console.log(prova)
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
-
+/*
 let stringainv=""
 function reverseString(n){
     
@@ -132,21 +132,28 @@ function reverseString(n){
 prova=reverseString("luca")
 console.log(prova)
 
-
+*/
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-let prova2=""
-let i=0
+
+
 function upperFirst(n){
     
-   
+    let prova2 = n.split(" ")
+
+    for(let i=0;i<n.length;i++){
+
+        prova2[i]=n[i].charAt(i).toUpperCase() + n[i].slice(i+1)
+        console.log(n.charAt(n.indexOf(" ")+1).toUpperCase() + n.slice((n.indexOf(" ")+1),1))
+
+        n.charAt(n.indexOf(" ")+1).toUpperCase() + n.slice((n.indexOf(" ")+1),1)
+
+    }
         
-        prova2=n.charAt(i).toUpperCase() + n.slice(i+1)
-        prova2+=n.charAt(n.indexOf(" ")+1).toUpperCase() + n.slice(n.indexOf(" ")+1)
         console.log(prova2)
         console.log(n.indexOf(" "))
         
@@ -161,6 +168,15 @@ console.log(prova)
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
+function cutString(n){
+    
+    n=n.slice(1)
+    n=n.slice(0,n.length-1)
+    return n
+}
+prova=cutString("andrea è un grande")
+console.log(prova)
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -169,3 +185,13 @@ console.log(prova)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n){
+    let rng = []
+    for(let i=1;i<n;i++)
+    {
+    rng[i]=Math.floor(Math.random()*10)
+    }
+    return rng
+}
+prova=giveMeRandom(10)
+console.log(prova)

@@ -133,17 +133,71 @@ console.log(prova)
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
 
+function loopUntil(n){
+    let n1=0
+    let n2
+    while(n1<3){
+        n2=Math.floor(Math.random()*10)
+        console.log(n2)
+        if(n2>n)
+        {
+            n1++
+        }
+
+    }
+}
+
+prova=loopUntil(6)
+
+
+/**/
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
+function average(n){
+    let somma=0
+    let numeri=0
+    console.log(n.length)
+    console.log(n[0])
+    for(let i=0;i<n.length;i++){
+        if(isNaN(n[i]))
+        {
+        }
+        else{
+            somma+=n[i]
+            numeri++
+        }
+    }
+    return somma/numeri
+
+
+}
+prova=average([1,2,3,"e",4,5,"x"])
+console.log(prova)
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
+function longest(n){
+    let maggiore=""
+    
+    for(let i=0;i<n.length;i++){
+
+        if(n[i].length>maggiore.length)
+        {
+            maggiore=n[i]
+        }
+    }
+    return maggiore
+
+}
+prova=longest(["luca","andrea","siummmmmmm","numero1000000000"])
+console.log(prova)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -151,12 +205,37 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
+function emailContent(n){
+    console.log(n.search("SCAM"))
+    if((n.toUpperCase().search("SCAM")!=-1)||(n.toUpperCase().search("SPAM")!=-1)){
+        return true
+    }
+    else{
+        return false
+    }
+    
+}
+prova=emailContent("hdjasdhjsak")
+console.log(prova)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
+const datanuova = new Date(1989,10,21)
+let datatot=0
+function giornidata(n)
+{
+    const dataattuale = new Date()
+    
+    datatot= (dataattuale.getTime()-n.getTime())
+    return ((((datatot/1000)/60)/60)/24)
+
+}
+
+prova=giornidata(datanuova)
+console.log(prova)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -167,5 +246,30 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
  ["00","01","02"
  "10","11","12"]
 */
+function matrixGenerator(x,y){
+    let xy=[0]
+    let i=0
+    let ix=0
+    let iy=0
+    let lunghezza=x*y
+    while(i<lunghezza){      
+        if(ix<x){
+            xy[i]=String(iy)+String(ix)
+            ix++
+            console.log(xy)
+        }else if(ix=x){
+            iy++
+            ix=0
+            xy[i]=String(iy)+String(ix)
+            ix++
+        }
 
+        
+        i++
+    }
+    return xy
+
+}
+prova=matrixGenerator(5,3)
+console.log(prova)
 /* SCRIVI QUI LA TUA RISPOSTA */
